@@ -21,12 +21,12 @@ const TodoList = () => {
 				onChange={(event) => setInputValue(event.target.value)}
 				value= {inputValue}
 				onKeyUp={(event) => {
-					if (event.key === "Enter") {
-						setMisTareas (misTareas.concat([inputValue]));
+					if (event.key === "Enter" && inputValue.length >= 3) {
+						setMisTareas ([...misTareas, inputValue]);
 						setInputValue("");
 					}
 				}}
-				 placeholder= " Agrega tu Tarea">
+				 placeholder= " Agrega Nueva Tarea">
 					
 				</input>
 				
